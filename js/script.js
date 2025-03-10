@@ -6,7 +6,7 @@ document.getElementById("login-form").addEventListener("submit", function(event)
     const password = document.getElementById("password").value;
 
     // Simple validation logic
-    if (username === "admin" && password === "password") {
+    if (username === "zX9&kT!mL5@wQ3" && password === "7*pN@Fy#8vL!zT") {
         alert("Logged in successfully!");
         window.location.href = "main.html"; // Redirect to the dashboard
     } else {
