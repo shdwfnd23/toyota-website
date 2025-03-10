@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environment</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="back-container">
+            <button onclick="goBack()">
+                &#8592; <!-- Left arrow icon -->
+            </button>
+        </div>
+        <img src="images/toyota-logo.png" alt="Toyota Logo" class="logo">
+    </header>
+    <main>
+        <h1>Environment</h1>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Energy Saved (kWh)</th>
+                        <th>Recycling Rate (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>January</td>
+                        <td>500</td>
+                        <td>80</td>
+                    </tr>
+                    <tr>
+                        <td>February</td>
+                        <td>450</td>
+                        <td>85</td>
+                    </tr>
+                    <tr>
+                        <td>March</td>
+                        <td>600</td>
+                        <td>90</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <canvas id="environmentChart" width="400" height="250"></canvas> <!-- Medium chart size -->
+    </main>
+    <footer>
+        <p>© Toyota Motor Philippines</p>
+    </footer>
+    <script>
+        // Back Navigation Function
+        function goBack() {
+            window.location.href = "main.html"; // Navigate back to Dashboard
+        }
+
+        // Environment Chart
+        const ctx = document.getElementById('environmentChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['January', 'February', 'March'],
+                datasets: [{
+                    label: 'Energy Saved (kWh)',
+                    data: [500, 450, 600],
+                    backgroundColor: '#333333', // Black for visibility
+                }, {
+                    label: 'Recycling Rate (%)',
+                    data: [80, 85, 90],
+                    backgroundColor: '#d71920', // Red for visibility
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

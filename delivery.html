@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="back-container">
+            <button onclick="goBack()">
+                &#8592; <!-- Left arrow icon -->
+            </button>
+        </div>
+        <img src="images/toyota-logo.png" alt="Toyota Logo" class="logo">
+    </header>
+    <main>
+        <h1>Delivery</h1>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>On-Time Deliveries</th>
+                        <th>Late Deliveries</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>January</td>
+                        <td>150</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>February</td>
+                        <td>145</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>March</td>
+                        <td>160</td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <canvas id="deliveryChart" width="400" height="250"></canvas> <!-- Medium chart size -->
+    </main>
+    <footer>
+        <p>© Toyota Motor Philippines</p>
+    </footer>
+    <script>
+        // Back Navigation Function
+        function goBack() {
+            window.location.href = "main.html"; // Navigate back to Dashboard
+        }
+
+        // Delivery Chart
+        const ctx = document.getElementById('deliveryChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['On-Time Deliveries', 'Late Deliveries'],
+                datasets: [{
+                    data: [95, 5],
+                    backgroundColor: ['#d71920', '#cccccc'], // Red and Grey
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safety</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="back-container">
+            <button onclick="goBack()">
+                &#8592; <!-- Left arrow icon -->
+            </button>
+        </div>
+        <img src="images/toyota-logo.png" alt="Toyota Logo" class="logo">
+    </header>
+    <main>
+        <h1>Safety</h1>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Inspections Completed</th>
+                        <th>Incidents Reported</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>January</td>
+                        <td>15</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>February</td>
+                        <td>12</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>March</td>
+                        <td>18</td>
+                        <td>2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <canvas id="safetyChart" width="400" height="250"></canvas> <!-- Medium chart size -->
+    </main>
+    <footer>
+        <p>© Toyota Motor Philippines</p>
+    </footer>
+    <script>
+        // Back Navigation Function
+        function goBack() {
+            window.location.href = "main.html"; // Navigate back to the dashboard
+        }
+
+        // Safety Chart
+        const ctx = document.getElementById('safetyChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['January', 'February', 'March'],
+                datasets: [{
+                    label: 'Safety Scores',
+                    data: [85, 90, 95],
+                    backgroundColor: ['#d71920', '#cccccc', '#333333']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

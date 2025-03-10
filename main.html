@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <!-- Toyota Logo -->
+        <img src="images/toyota-logo.png" alt="Toyota Logo" class="logo">
+        
+        <!-- Back Button -->
+        <div class="navigation-arrows">
+            <button id="back-button" onclick="goBack()">&larr;</button>
+        </div>
+        
+        <!-- Logout Button -->
+        <div class="logout-container">
+            <button id="logout-button" onclick="logout()">Logout</button>
+        </div>
+    </header>
+    <main>
+        <h1>Dashboard</h1>
+        <div class="categories-container">
+            <a href="safety.html" class="category">
+                <img src="images/safety-logo.png" alt="Safety Logo">
+                <span>Safety</span>
+            </a>
+            <a href="quality.html" class="category">
+                <img src="images/quality-logo.png" alt="Quality Logo">
+                <span>Quality</span>
+            </a>
+            <a href="delivery.html" class="category">
+                <img src="images/delivery-logo.png" alt="Delivery Logo">
+                <span>Delivery</span>
+            </a>
+            <a href="environment.html" class="category">
+                <img src="images/environment-logo.png" alt="Environment Logo">
+                <span>Environment</span>
+            </a>
+        </div>
+    </main>
+    <footer>
+        <p>© Toyota Motor Philippines</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
