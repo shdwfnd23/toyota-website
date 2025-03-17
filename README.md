@@ -11,3 +11,4 @@ A responsive website for showcasing Toyota vehicles, with plans for dynamic feat
 1. Clone the repository:
    ```bash
    git clone https://github.com/shdwfnd23/toyota-website.git
+# Trigger Pages deployment
